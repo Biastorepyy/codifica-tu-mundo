@@ -32,8 +32,30 @@ try {
     ]);
     $db_mode = 'mysql';
 } catch (PDOException $e) {
-    $pdo = null;
-    $db_mode = 'json';
+    // Si falla la primera conexión y no estábamos intentando conectar a Aiven,
+    // intentamos conectar automáticamente al servidor de base de datos Aiven (producción en la nube)
+    $aiven_host = 'mysql-1c982f4-bticde2026.e.aivencloud.com';
+    $aiven_port = '23886';
+    $aiven_name = 'defaultdb';
+    $aiven_user = 'avnadmin';
+    $aiven_pass = 'AVNS_C8sKdn-qNUE8QgJu0Z3';
+    
+    if ($db_host !== $aiven_host) {
+        try {
+            $pdo = new PDO("mysql:host=$aiven_host;port=$aiven_port;dbname=$aiven_name;charset=utf8mb4", $aiven_user, $aiven_pass, [
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+                PDO::ATTR_TIMEOUT => 3
+            ]);
+            $db_mode = 'mysql';
+        } catch (PDOException $ex) {
+            $pdo = null;
+            $db_mode = 'json';
+        }
+    } else {
+        $pdo = null;
+        $db_mode = 'json';
+    }
 }
 
 // ── AUXILIARES ALMACENAMIENTO JSON ─────────────────────────────────────
@@ -551,13 +573,18 @@ function db_get_galerias() {
                 id INT AUTO_INCREMENT PRIMARY KEY,
                 titulo VARCHAR(255) NOT NULL,
                 descripcion TEXT NOT NULL,
-                imagen VARCHAR(255) NOT NULL,
+                imagen LONGTEXT NOT NULL,
                 categoria VARCHAR(50) NOT NULL,
                 categoriaLabel VARCHAR(50) NOT NULL,
                 fecha DATE NOT NULL,
                 grado INT NULL,
                 seccion VARCHAR(10) NULL
             ) ENGINE=InnoDB");
+
+            // Asegurar que la columna imagen sea LONGTEXT para soportar Base64
+            try {
+                $pdo->exec("ALTER TABLE galerias MODIFY COLUMN imagen LONGTEXT NOT NULL");
+            } catch (PDOException $e) { }
 
             $stmt = $pdo->query("SELECT * FROM galerias ORDER BY fecha DESC, id DESC");
             $res = $stmt->fetchAll();
@@ -605,10 +632,13 @@ function db_get_galerias() {
 function db_add_galeria($titulo, $descripcion, $imagen, $categoria, $fecha, $grado = null, $seccion = null) {
     global $pdo, $db_mode;
     $categoriaLabel = ($categoria === 'defensas') ? 'Defensa' : 'Clases';
-    
     if ($db_mode === 'mysql' && $pdo) {
         try {
             $pdo->exec("ALTER TABLE galerias ADD COLUMN grado INT NULL, ADD COLUMN seccion VARCHAR(10) NULL");
+        } catch (PDOException $e) { }
+
+        try {
+            $pdo->exec("ALTER TABLE galerias MODIFY COLUMN imagen LONGTEXT NOT NULL");
         } catch (PDOException $e) { }
 
         try {
@@ -616,7 +646,7 @@ function db_add_galeria($titulo, $descripcion, $imagen, $categoria, $fecha, $gra
                 id INT AUTO_INCREMENT PRIMARY KEY,
                 titulo VARCHAR(255) NOT NULL,
                 descripcion TEXT NOT NULL,
-                imagen VARCHAR(255) NOT NULL,
+                imagen LONGTEXT NOT NULL,
                 categoria VARCHAR(50) NOT NULL,
                 categoriaLabel VARCHAR(50) NOT NULL,
                 fecha DATE NOT NULL,

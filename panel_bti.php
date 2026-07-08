@@ -79,31 +79,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['flash_type'] = "error";
         } else {
             $tmpName = $_FILES['imagen']['tmp_name'];
-            $fileName = basename($_FILES['imagen']['name']);
+            $fileData = @file_get_contents($tmpName);
             
-            // Guardar localmente en lugar de depender de la nube
-            $extension = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
-            $newFileName = uniqid() . '_' . time() . '.' . $extension;
-            $uploadDir = __DIR__ . '/assets/img/galeria/';
-            
-            if (!is_dir($uploadDir)) {
-                @mkdir($uploadDir, 0777, true);
-            }
-            
-            $destination = $uploadDir . $newFileName;
-            
-            if (move_uploaded_file($tmpName, $destination)) {
-                $rutaRelativa = 'assets/img/galeria/' . $newFileName;
+            if ($fileData !== false) {
+                $mimeType = @mime_content_type($tmpName);
+                if (!$mimeType || strpos($mimeType, 'image/') !== 0) {
+                    $mimeType = $_FILES['imagen']['type'];
+                }
                 
-                if (db_add_galeria($titulo, $descripcion, $rutaRelativa, $categoria, $fecha, $grado, $seccion)) {
-                    $_SESSION['flash_msg'] = "¡Imagen subida a la galería correctamente!";
-                    $_SESSION['flash_type'] = "success";
+                if (strpos($mimeType, 'image/') === 0) {
+                    $base64 = base64_encode($fileData);
+                    $rutaRelativa = 'data:' . $mimeType . ';base64,' . $base64;
+                    
+                    if (db_add_galeria($titulo, $descripcion, $rutaRelativa, $categoria, $fecha, $grado, $seccion)) {
+                        $_SESSION['flash_msg'] = "¡Imagen subida a la galería correctamente!";
+                        $_SESSION['flash_type'] = "success";
+                    } else {
+                        $_SESSION['flash_msg'] = "Error al guardar la imagen en la base de datos.";
+                        $_SESSION['flash_type'] = "error";
+                    }
                 } else {
-                    $_SESSION['flash_msg'] = "La imagen se subió, pero no pudo guardarse en la base de datos.";
+                    $_SESSION['flash_msg'] = "El archivo subido no es una imagen válida.";
                     $_SESSION['flash_type'] = "error";
                 }
             } else {
-                $_SESSION['flash_msg'] = "Error al guardar la imagen en el servidor. Verifica los permisos de carpeta.";
+                $_SESSION['flash_msg'] = "Error al leer el archivo de imagen subido.";
                 $_SESSION['flash_type'] = "error";
             }
         }

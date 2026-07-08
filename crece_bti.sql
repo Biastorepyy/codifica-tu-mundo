@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS galerias (
     id INT AUTO_INCREMENT PRIMARY KEY,
     titulo VARCHAR(255) NOT NULL,
     descripcion TEXT NOT NULL,
-    imagen VARCHAR(255) NOT NULL,
+    imagen LONGTEXT NOT NULL,
     categoria VARCHAR(50) NOT NULL,
     categoriaLabel VARCHAR(50) NOT NULL,
     fecha DATE NOT NULL
