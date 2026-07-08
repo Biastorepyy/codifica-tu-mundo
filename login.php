@@ -7,10 +7,11 @@ if (isset($_SESSION["bti_admin"]) && $_SESSION["bti_admin"] === true) {
 
 $error = "";
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $username = $_POST["username"] ?? "";
-    $password = $_POST["password"] ?? "";
+    $username = trim($_POST["username"] ?? "");
+    $password = trim($_POST["password"] ?? "");
     
-    if ($username === "BTI" && $password === "BTI026CDE") {
+    // Convertir el nombre de usuario a mayúsculas para evitar problemas de case en teléfonos
+    if (strtoupper($username) === "BTI" && $password === "BTI026CDE") {
         // PREVENCIÓN DE SESSION FIXATION
         session_regenerate_id(true);
         $_SESSION["bti_admin"] = true;
@@ -37,11 +38,11 @@ require_once __DIR__ . "/includes/header.php";
         <form action="login.php" method="POST" style="display: flex; flex-direction: column; gap: 1.25rem; text-align: left;">
             <div>
                 <label style="font-size: 0.85rem; font-weight: 600; color: var(--color-secondary); margin-bottom: 0.5rem; display: block;">Usuario</label>
-                <input type="text" name="username" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: 6px; outline: none;">
+                <input type="text" name="username" required autocomplete="off" autocapitalize="none" autocorrect="off" style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: 6px; outline: none;">
             </div>
             <div>
                 <label style="font-size: 0.85rem; font-weight: 600; color: var(--color-secondary); margin-bottom: 0.5rem; display: block;">Contrase&ntilde;a</label>
-                <input type="password" name="password" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: 6px; outline: none;">
+                <input type="password" name="password" required autocomplete="off" autocapitalize="none" autocorrect="off" style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: 6px; outline: none;">
             </div>
             <button type="submit" class="btn btn-primary" style="margin-top: 0.5rem; width: 100%; justify-content: center;">Ingresar al Panel</button>
         </form>

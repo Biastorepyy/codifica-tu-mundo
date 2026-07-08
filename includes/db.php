@@ -546,8 +546,44 @@ function db_get_galerias() {
     global $pdo, $db_mode;
     if ($db_mode === 'mysql' && $pdo) {
         try {
+            // Asegurarnos de que la tabla exista
+            $pdo->exec("CREATE TABLE IF NOT EXISTS galerias (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                titulo VARCHAR(255) NOT NULL,
+                descripcion TEXT NOT NULL,
+                imagen VARCHAR(255) NOT NULL,
+                categoria VARCHAR(50) NOT NULL,
+                categoriaLabel VARCHAR(50) NOT NULL,
+                fecha DATE NOT NULL,
+                grado INT NULL,
+                seccion VARCHAR(10) NULL
+            ) ENGINE=InnoDB");
+
             $stmt = $pdo->query("SELECT * FROM galerias ORDER BY fecha DESC, id DESC");
             $res = $stmt->fetchAll();
+            
+            // Si está vacía, hacer el seeding en MySQL
+            if (count($res) === 0) {
+                $defaultData = getJsonData();
+                if (isset($defaultData['galerias']) && !empty($defaultData['galerias'])) {
+                    $insertStmt = $pdo->prepare("INSERT INTO galerias (titulo, descripcion, imagen, categoria, categoriaLabel, fecha, grado, seccion) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+                    foreach ($defaultData['galerias'] as $item) {
+                        $insertStmt->execute([
+                            $item['titulo'] ?? '',
+                            $item['descripcion'] ?? '',
+                            $item['imagen'] ?? '',
+                            $item['categoria'] ?? 'clases',
+                            $item['categoriaLabel'] ?? 'Clases',
+                            $item['fecha'] ?? date('Y-m-d'),
+                            $item['grado'] ?? null,
+                            $item['seccion'] ?? null
+                        ]);
+                    }
+                    // Volver a consultar después de insertar
+                    $stmt = $pdo->query("SELECT * FROM galerias ORDER BY fecha DESC, id DESC");
+                    $res = $stmt->fetchAll();
+                }
+            }
             return $res;
         } catch (PDOException $e) {
             // Fallback
