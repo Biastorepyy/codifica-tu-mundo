@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 $estudiantes_list_php = db_get_estudiantes();
 $grados_unicos = [];
-$secciones_unicas = [];
+$secciones_unicas = ['A', 'B', 'C', 'D'];
 foreach ($estudiantes_list_php as $est) {
     if (!empty($est['grado']) && !in_array($est['grado'], $grados_unicos)) {
         $grados_unicos[] = $est['grado'];
@@ -75,7 +75,6 @@ sort($grados_unicos);
 sort($secciones_unicas);
 // Fallback
 if (empty($grados_unicos)) $grados_unicos = ['5to', '6to'];
-if (empty($secciones_unicas)) $secciones_unicas = ['A', 'B', 'C', 'D'];
 
 $pageTitle = "Registro de Asistencia";
 require_once __DIR__ . '/includes/header.php';

@@ -12,7 +12,7 @@ require_once __DIR__ . '/includes/header.php';
 $estudiantes = db_get_estudiantes();
 
 $grados_unicos = [];
-$secciones_unicas = [];
+$secciones_unicas = ['A', 'B', 'C', 'D'];
 foreach ($estudiantes as $est) {
     if (!empty($est['grado']) && !in_array($est['grado'], $grados_unicos)) {
         $grados_unicos[] = $est['grado'];
