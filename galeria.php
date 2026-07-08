@@ -64,6 +64,7 @@ $galeriaItems = db_get_galerias();
     object-fit: cover;
     transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
     display: block;
+    color: transparent; /* Oculta el texto alt y el ícono roto si la imagen falla */
 }
 
 .gallery-card:hover .gallery-img-wrap > img:not(.overlay-baner):not(.overlay-escudo) {
