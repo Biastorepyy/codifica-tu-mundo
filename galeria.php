@@ -529,9 +529,10 @@ $galeriaItems = db_get_galerias();
                     <img src="assets/img/baner.jpeg" class="overlay-baner" alt="Banner">
                     <img src="assets/img/descarga (1).png" class="overlay-escudo" alt="Escudo">
                     <img
-                        src="<?php echo htmlspecialchars($item['imagen']); ?>"
+                        src="<?php echo htmlspecialchars($item['imagen'] ?? ''); ?>"
                         alt="<?php echo htmlspecialchars($item['titulo'] ?? ''); ?>"
                         loading="lazy"
+                        onerror="this.style.opacity='0';"
                     >
                     <button
                         class="gallery-zoom-btn zoom-trigger"
@@ -584,7 +585,7 @@ $galeriaItems = db_get_galerias();
     <div class="lightbox-inner" style="position: relative; display: inline-block;">
         <img src="assets/img/baner.jpeg" class="lightbox-overlay-baner" alt="Banner">
         <img src="assets/img/descarga (1).png" class="lightbox-overlay-escudo" alt="Escudo">
-        <img class="lightbox-img" id="lightboxImg" src="" alt="Vista ampliada">
+        <img class="lightbox-img" id="lightboxImg" src="" alt="Vista ampliada" onerror="this.style.opacity='0';">
         <div class="lightbox-caption">
             <h4 id="lightboxTitle"></h4>
             <p id="lightboxDesc"></p>
@@ -695,6 +696,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentCard = visibleItems[currentItemIndex];
         const btn = currentCard.querySelector('.zoom-trigger');
         
+        lightboxImg.style.opacity = '1';
         lightboxImg.src           = btn.getAttribute('data-img');
         lightboxTitle.textContent = btn.getAttribute('data-title');
         lightboxDesc.textContent  = btn.getAttribute('data-desc');
