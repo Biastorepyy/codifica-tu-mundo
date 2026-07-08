@@ -1,0 +1,1969 @@
+{
+    "estudiantes": [
+        {
+            "id": 1,
+            "nombre": "Acosta Benitez, Victoria",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 2,
+            "nombre": "Alonzo Monteiro De Araujo, Laura Esther",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 3,
+            "nombre": "Alvarenga Fretes, Oliver Damian",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 4,
+            "nombre": "Avalos Britez, Didier Daniel",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 5,
+            "nombre": "Balmaceda Ferreira, Fernando Josue",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 6,
+            "nombre": "Basaldua Escurra, Liam Gael",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 7,
+            "nombre": "Benitez Escurra, Kiara Lujan",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 8,
+            "nombre": "Britez Fernandez Sol Fiorella",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 9,
+            "nombre": "Brítos Reyes, Araceli Luján",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 10,
+            "nombre": "Caballero Gomez, Maria Sol Arami",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 11,
+            "nombre": "Cantero Alderete, Thiago Emmanuel",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 12,
+            "nombre": "Cardenas Zarate, Thiago Gael",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 13,
+            "nombre": "Castellano Vera, Thiago Nahuel",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 14,
+            "nombre": "Cristaldo Galindo, Angel Emanuel",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 15,
+            "nombre": "Cristaldo Jara, Emma Victoria",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 16,
+            "nombre": "Denis Leiva, Santiago Gabriel",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 17,
+            "nombre": "Doldán Román, Santino Diosnel",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 18,
+            "nombre": "Escurra Paredes, Elvio Jeús",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 19,
+            "nombre": "Fernandez Vazquez, Danna Alejandra",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 20,
+            "nombre": "Galeano García, Mia Nahiara",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 21,
+            "nombre": "Galeano Samudio, Gianna Antonella",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 22,
+            "nombre": "Garcia Avalos, Jesus Antonio",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 23,
+            "nombre": "García Navarro, Arely Luana",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 24,
+            "nombre": "Gimenez Herrera, Genesis Abigail",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 25,
+            "nombre": "Gimenez Mendez, Sally Victoria",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 26,
+            "nombre": "Gomez Davalos, Antonella Abigail",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 27,
+            "nombre": "Gonzalez Amarilla, Leidy Carolina",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 28,
+            "nombre": "Gonzalez Zarate, Josías Samuel",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 29,
+            "nombre": "Ibañez Leguizamón, Franco Miguel",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 30,
+            "nombre": "Jara Da Silva, Lucero Aurora",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 31,
+            "nombre": "Lauter Montiel, Charlotte Pietra",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 32,
+            "nombre": "López López, Roberto Daniel",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 33,
+            "nombre": "López Quiñónez, Cristhofer Daniel",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 34,
+            "nombre": "Lopez Rolon, Aylla Nahiara",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 35,
+            "nombre": "Martinez Gauto, Katheryn Thais",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 36,
+            "nombre": "Meza Marzal, Enzo Benjamin",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 37,
+            "nombre": "Molinas Segovia, Erika Lujan",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 38,
+            "nombre": "Moreno Martínez, Hugo Ariel",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 39,
+            "nombre": "Ocampos Sala, Mia Belén",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 40,
+            "nombre": "Ojeda Gimenez, Marthin Gael",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 41,
+            "nombre": "Paez Irala, Josias Serafin",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 42,
+            "nombre": "Pereira Acevedo, Sofia Micaela",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 43,
+            "nombre": "Rodriguez Ibarra, Bernardo Abel",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 44,
+            "nombre": "Rojas Ortellado, Mariana Ayleen",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 45,
+            "nombre": "Rolon Irala, Fabiani Ezequiel",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 46,
+            "nombre": "Salinas Aguirre, Zamira Lujan",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 47,
+            "nombre": "Sandoval Ramirez, Aldo Andres",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 48,
+            "nombre": "Silvero Ruiz Díaz, Johan Daniel",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 49,
+            "nombre": "Tellez Elizeche, Oliver Dadiel",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 50,
+            "nombre": "Valderrama López, Gabriel",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 51,
+            "nombre": "Velazco Velazquez, Eduardo Nicolás",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 52,
+            "nombre": "Vera González, Zoe Magali",
+            "grado": "5to",
+            "seccion": "B"
+        },
+        {
+            "id": 53,
+            "nombre": "Aguirre Cabrera, Hugo David",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 54,
+            "nombre": "Alfonzo Duarte, Facundo Joaquin",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 55,
+            "nombre": "Alviso Céspedes, Milagros Milena",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 56,
+            "nombre": "Aranda González, Armando Daniel",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 57,
+            "nombre": "Ayala Cárdenas, Erica Mariana",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 58,
+            "nombre": "Benítez Mancia, Veronica Abigail",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 59,
+            "nombre": "Benítez Sánchez, Fide Alexander",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 60,
+            "nombre": "Bobadilla Coronel, Bruno Manuel",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 61,
+            "nombre": "Bogado Balbuena, Iván Tadeo",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 62,
+            "nombre": "Britez Melgarejo, Thiago Nahuel",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 63,
+            "nombre": "Cano Sánchez, Matías Benjamín",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 64,
+            "nombre": "Cardozo Soto, Luciana Magalí",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 65,
+            "nombre": "Castillo Armoa, Micaela Rubí",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 66,
+            "nombre": "Colman Mora, Alisson Gabriela",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 67,
+            "nombre": "Fernandez Vera, Alejandro Aquiles",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 68,
+            "nombre": "Ferreira Bogado, Mirella Aylén",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 69,
+            "nombre": "Franco Fleitas, Isabela Jeruti",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 70,
+            "nombre": "Frutos Sanabria, Victor Daniel",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 71,
+            "nombre": "Giménez Ayala, Sofia Isabella",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 72,
+            "nombre": "Giménez Iglesias, Suri Nicol",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 73,
+            "nombre": "Giménez Vera, Samuel Edgar",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 74,
+            "nombre": "González Almada, Derlis Gustavo Emmanuel",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 75,
+            "nombre": "González Espínola, Josías Daniel",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 76,
+            "nombre": "Hermosilla Vera, Danna Abigail",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 77,
+            "nombre": "Leguizamón Martínez, Julieta Maite",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 78,
+            "nombre": "López Arevalos, Mathias Emanuel",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 79,
+            "nombre": "Martínez González, Milena Abigail",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 80,
+            "nombre": "Martínez Nuñez, Katherin Jazmin",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 81,
+            "nombre": "Medina Torres, Elias Josué",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 82,
+            "nombre": "Morán Sánchez, Sofia Magdalena",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 83,
+            "nombre": "Ojeda Gonzalez, Paz Thainara",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 84,
+            "nombre": "Ojeda Pereira, Danna Nicole",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 85,
+            "nombre": "Olmedo Morinigo, Vanina Guadalupe",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 86,
+            "nombre": "Ovelar Nuñez, Lucas Tadeo",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 87,
+            "nombre": "Pérez Alvarenga, Dylan Josué",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 88,
+            "nombre": "Pires González, Murilo Vinicius",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 89,
+            "nombre": "Prieto Achucarro, Dylhan David",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 90,
+            "nombre": "Prieto Sostoa, Thiago Nahuel",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 91,
+            "nombre": "Recalde Aquino, Sofia Isabel",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 92,
+            "nombre": "Recalde Rios, Arianne Valentina",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 93,
+            "nombre": "Rojas Cardozo, Anahi Paloma",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 94,
+            "nombre": "Rojas Méndez, Sofia Milagros",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 95,
+            "nombre": "Sosa Báez, Melanie Licebt",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 96,
+            "nombre": "Toledo Ayala, Alex Daniel",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 97,
+            "nombre": "Toledo Mora, Victoria Alejandra",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 98,
+            "nombre": "Torales González, Isaías Eduardo",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 99,
+            "nombre": "Trinidad Rojas, Danna Valentina",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 100,
+            "nombre": "Uldera Ramos, Genesis Rocio",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 101,
+            "nombre": "Valdez Ibarra, Marcelo Alejandro",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 102,
+            "nombre": "Vega Godoy, Judy Fiomara",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 103,
+            "nombre": "Vera Frutos, Kevin Ivan",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 104,
+            "nombre": "Villar González, Luis Fernando",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 105,
+            "nombre": "Vázquez Ramírez, Raissa Janire",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 106,
+            "nombre": "Zarza Rivas, Alvaro David",
+            "grado": "6to",
+            "seccion": "B"
+        },
+        {
+            "id": 107,
+            "nombre": "Achucarro Cuba, Icker Rodrigo",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 108,
+            "nombre": "Acosta Arguello, Gabriela María Luján",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 109,
+            "nombre": "Aguilera Velázquez, Meliza Soeli",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 110,
+            "nombre": "Alvarenga Cespedes, Marcos Misael",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 111,
+            "nombre": "Alvarez Britez, Amalia Cibelle",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 112,
+            "nombre": "Amarilla Román, Matheo Samuel",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 113,
+            "nombre": "Aranda González, Ruth Fabiola",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 114,
+            "nombre": "Báez Velázquez, Pablo Josué",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 115,
+            "nombre": "Bareiro Brizuela, Michelli Jazmín",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 116,
+            "nombre": "Bavera Enciso, Aaron Jesús",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 117,
+            "nombre": "Benítez García, Dylan Matías",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 118,
+            "nombre": "Britez Gamarra, Lucía Milagro",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 119,
+            "nombre": "Cáceres Cabrera, Melany Aryane",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 120,
+            "nombre": "Cáceres Candia, Sofía Luján",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 121,
+            "nombre": "Cano Ledesma, Cristel Milena",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 122,
+            "nombre": "Coronel Britos, Mía Valentina",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 123,
+            "nombre": "Díaz Fernández, Cesar Iam",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 124,
+            "nombre": "Duarte Duarte, Thiago Joaquín",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 125,
+            "nombre": "Escobar Torres, Isaías Santiago",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 126,
+            "nombre": "Espínola Espínola, Thiago Josue",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 127,
+            "nombre": "Estigarribia González, Katherine Monserrath",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 128,
+            "nombre": "Ferreira Ávalos, Silvia Marisol",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 129,
+            "nombre": "Ferreira Castro, Sofía Mariel",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 130,
+            "nombre": "Figueredo Báez, Josías Miguel",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 131,
+            "nombre": "Flores Zapattini, Paloma Nicolle",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 132,
+            "nombre": "Franco Aquino, Milagros Elizabeth",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 133,
+            "nombre": "Frutos Sanabria, Victor Aaron",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 134,
+            "nombre": "Gamarra Fariña, Lucas Mateo",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 135,
+            "nombre": "Giménez Espínola, Samira Nicole",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 136,
+            "nombre": "Gimenez García, Jeremías Andrés",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 137,
+            "nombre": "Godoy Aguirre, Axel Ariel",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 138,
+            "nombre": "Gómez Insaurralde, Jorge Leonardo",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 139,
+            "nombre": "Herrera Idoyaga, Alexander De Jesús",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 140,
+            "nombre": "Jara Da Silva, Julieta María Saharí",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 141,
+            "nombre": "Larroza Garay, Guillermo Gael",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 142,
+            "nombre": "Lime Davalos, Sofía Rebeca",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 143,
+            "nombre": "Lisboa Ledesma, Juan David",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 144,
+            "nombre": "Maciel Ozuna, David Luiz",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 145,
+            "nombre": "Melgarejo Pereira, Dylan Santiago",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 146,
+            "nombre": "Molas Marecos, Max Missael",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 147,
+            "nombre": "Morgalos Martínez, Kael Abraham",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 148,
+            "nombre": "Morán Sánchez, Kevin Fabián",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 149,
+            "nombre": "Ojeda Giménez, Gabriel Josue",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 150,
+            "nombre": "Paredes Rivas, Lucas Paul",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 151,
+            "nombre": "Reguera Benítez, Edgar Elías",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 152,
+            "nombre": "Rodríguez Cabrera, Cesar Asmir",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 153,
+            "nombre": "Rojas Cardozo, Abigail Yeruti",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 154,
+            "nombre": "Rotela Nuñez, Hector Josue",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 155,
+            "nombre": "Silvero Benítez, Zoe Abigaíl",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 156,
+            "nombre": "Talavera Martínez, Alaia Jazmín",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 157,
+            "nombre": "Vera Franco, Izán Israel",
+            "grado": "5to",
+            "seccion": "A"
+        },
+        {
+            "id": 158,
+            "nombre": "Acosta Florentin, Angie Gabriela",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 159,
+            "nombre": "Adorno, Alejandro Miguel",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 160,
+            "nombre": "Alarcón Paredes, Igor Nahuel",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 161,
+            "nombre": "Ávalos Fretes, Thais Aylen",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 162,
+            "nombre": "Báez Cáceres, Perla Celeste",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 163,
+            "nombre": "Báez Noguera, Paloma Janice",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 164,
+            "nombre": "Báez Rivas, Nahiara Anabel",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 165,
+            "nombre": "Bazán Bareiro, Alberto Junior",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 166,
+            "nombre": "Bazán González, Mathias Gael",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 167,
+            "nombre": "Benítez Britez, Thiago Alexander",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 168,
+            "nombre": "Benítez Núñez, Alejandro Nahuel",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 169,
+            "nombre": "Benítez Paredes, Yanina Itzel",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 170,
+            "nombre": "Bogado Dávalos, Luján Jassiel",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 171,
+            "nombre": "Bogarín Rodríguez, Selena Madeleine",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 172,
+            "nombre": "Britez Acosta, Sofía Guadalupe",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 173,
+            "nombre": "Cabrera Duarte, Jesús Emanuel",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 174,
+            "nombre": "Cáceres Duarte, Alan Sebastian",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 175,
+            "nombre": "Cohene Sanchez, Aynara Abigail",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 176,
+            "nombre": "Cuba Molinas, Fabio Alexander",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 177,
+            "nombre": "Duarte Cabrera, Thiago Jesús",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 178,
+            "nombre": "Duarte Vera, Sofía Isabella",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 179,
+            "nombre": "Escobar Duarte, Adriana Isabela",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 180,
+            "nombre": "Espínola Gomez, Fernando Samuel",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 181,
+            "nombre": "Fariña Martínez, Amira Isabella",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 182,
+            "nombre": "Ferreira González, Lucas David",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 183,
+            "nombre": "Franco Martínez, Helem Beatriz",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 184,
+            "nombre": "Gamarra Pereira, Valery Gabriela",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 185,
+            "nombre": "Gomez Durañona, Santiago Benjamín",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 186,
+            "nombre": "Gómez Fernández, Carla Nazareth",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 187,
+            "nombre": "González Medina, Ever Sebastian",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 188,
+            "nombre": "Idoyaga Ríos, Aranza Abigail",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 189,
+            "nombre": "Irala Correa, Jonás Emanuel",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 190,
+            "nombre": "Martínez Rojas, Sofía Anahí",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 191,
+            "nombre": "Melgarejo Samudio, Melissa Mariel",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 192,
+            "nombre": "Pico Lambaré, Michel Alexander",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 193,
+            "nombre": "Pintos Enciso, Zahira Gabriela",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 194,
+            "nombre": "Portillo Morfín, Elías Daniel",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 195,
+            "nombre": "Ramírez Torres, Rocío Aramí",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 196,
+            "nombre": "Roa Castillo, Fabio Rafael",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 197,
+            "nombre": "Rojas Benitez, Magalí Abigaíl",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 198,
+            "nombre": "Rolón Dure, Mónica María Paz",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 199,
+            "nombre": "Romero González, Danna Fiorella",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 200,
+            "nombre": "Sánchez Muñiz, Pedro Fernando",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 201,
+            "nombre": "Segovia Sánchez, Kathia Belinda Aide",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 202,
+            "nombre": "Sosa Mendoza, Santiago Nicolás",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 203,
+            "nombre": "Vera Villalba, Dahiana Aylen",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 204,
+            "nombre": "Villagra Vera, Vanía Abigaíl",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 205,
+            "nombre": "Villalba Benítez, Lucas Julián",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 206,
+            "nombre": "Villalba Holt, Mathias Benjamín",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 207,
+            "nombre": "Acosta Florentin, Angie Gabriela",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 208,
+            "nombre": "Adorno, Alejandro Miguel",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 209,
+            "nombre": "Alarcón Paredes, Igor Nahuel",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 210,
+            "nombre": "Ávalos Fretes, Thais Aylen",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 211,
+            "nombre": "Báez Cáceres, Perla Celeste",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 212,
+            "nombre": "Báez Noguera, Paloma Janice",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 213,
+            "nombre": "Báez Rivas, Nahiara Anabel",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 214,
+            "nombre": "Bazán Bareiro, Alberto Junior",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 215,
+            "nombre": "Bazán González, Mathias Gael",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 216,
+            "nombre": "Benítez Britez, Thiago Alexander",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 217,
+            "nombre": "Benítez Núñez, Alejandro Nahuel",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 218,
+            "nombre": "Benítez Paredes, Yanina Itzel",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 219,
+            "nombre": "Bogado Dávalos, Luján Jassiel",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 220,
+            "nombre": "Bogarín Rodríguez, Selena Madeleine",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 221,
+            "nombre": "Britez Acosta, Sofía Guadalupe",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 222,
+            "nombre": "Cabrera Duarte, Jesús Emanuel",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 223,
+            "nombre": "Cáceres Duarte, Alan Sebastian",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 224,
+            "nombre": "Cohene Sanchez, Aynara Abigail",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 225,
+            "nombre": "Cuba Molinas, Fabio Alexander",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 226,
+            "nombre": "Duarte Cabrera, Thiago Jesús",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 227,
+            "nombre": "Duarte Vera, Sofía Isabella",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 228,
+            "nombre": "Escobar Duarte, Adriana Isabela",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 229,
+            "nombre": "Espínola Gomez, Fernando Samuel",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 230,
+            "nombre": "Fariña Martínez, Amira Isabella",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 231,
+            "nombre": "Ferreira González, Lucas David",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 232,
+            "nombre": "Franco Martínez, Helem Beatriz",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 233,
+            "nombre": "Gamarra Pereira, Valery Gabriela",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 234,
+            "nombre": "Gomez Durañona, Santiago Benjamín",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 235,
+            "nombre": "Gómez Fernández, Carla Nazareth",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 236,
+            "nombre": "González Medina, Ever Sebastian",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 237,
+            "nombre": "Idoyaga Ríos, Aranza Abigail",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 238,
+            "nombre": "Irala Correa, Jonás Emanuel",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 239,
+            "nombre": "Martínez Rojas, Sofía Anahí",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 240,
+            "nombre": "Melgarejo Samudio, Melissa Mariel",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 241,
+            "nombre": "Pico Lambaré, Michel Alexander",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 242,
+            "nombre": "Pintos Enciso, Zahira Gabriela",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 243,
+            "nombre": "Portillo Morfín, Elías Daniel",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 244,
+            "nombre": "Ramírez Torres, Rocío Aramí",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 245,
+            "nombre": "Roa Castillo, Fabio Rafael",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 246,
+            "nombre": "Rojas Benitez, Magalí Abigaíl",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 247,
+            "nombre": "Rolón Dure, Mónica María Paz",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 248,
+            "nombre": "Romero González, Danna Fiorella",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 249,
+            "nombre": "Sánchez Muñiz, Pedro Fernando",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 250,
+            "nombre": "Segovia Sánchez, Kathia Belinda Aide",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 251,
+            "nombre": "Sosa Mendoza, Santiago Nicolás",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 252,
+            "nombre": "Vera Villalba, Dahiana Aylen",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 253,
+            "nombre": "Villagra Vera, Vanía Abigaíl",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 254,
+            "nombre": "Villalba Benítez, Lucas Julián",
+            "grado": "6to",
+            "seccion": "A"
+        },
+        {
+            "id": 255,
+            "nombre": "Villalba Holt, Mathias Benjamín",
+            "grado": "6to",
+            "seccion": "A"
+        }
+    ],
+    "profesores": [
+        {
+            "id": 1,
+            "nombre": "Prof. Lic. Carlos Ferreira",
+            "materia": "Programación Web"
+        },
+        {
+            "id": 2,
+            "nombre": "Prof. Ing. Andrea Espínola",
+            "materia": "Bases de Datos"
+        },
+        {
+            "id": 3,
+            "nombre": "Prof. Lic. Mabel Rojas",
+            "materia": "Análisis y Diseño"
+        },
+        {
+            "id": 4,
+            "nombre": "Prof. Ing. Gustavo Galeano",
+            "materia": "Redes de Computadoras"
+        }
+    ],
+    "asistencias": [
+        {
+            "id": 1,
+            "tipo": "alumno",
+            "ref_id": 256,
+            "nombre": "Acosta Benítez, Matías Alejandro",
+            "grado": "90",
+            "seccion": "T",
+            "fecha": "2026-07-07",
+            "hora": "16:38:34",
+            "estado": "Ausente",
+            "trabajo_clase": 1
+        },
+        {
+            "id": 2,
+            "tipo": "alumno",
+            "ref_id": 257,
+            "nombre": "Alarcón González, Sofía Valentina",
+            "grado": "90",
+            "seccion": "T",
+            "fecha": "2026-07-07",
+            "hora": "16:38:34",
+            "estado": "Presente",
+            "trabajo_clase": 0
+        },
+        {
+            "id": 3,
+            "tipo": "alumno",
+            "ref_id": 258,
+            "nombre": "Báez Fernández, Thiago Emanuel",
+            "grado": "90",
+            "seccion": "T",
+            "fecha": "2026-07-07",
+            "hora": "16:38:34",
+            "estado": "Ausente",
+            "trabajo_clase": 1
+        },
+        {
+            "id": 4,
+            "tipo": "alumno",
+            "ref_id": 259,
+            "nombre": "Barrios Cáceres, Camila Abigail",
+            "grado": "90",
+            "seccion": "T",
+            "fecha": "2026-07-07",
+            "hora": "16:38:34",
+            "estado": "Presente",
+            "trabajo_clase": 1
+        },
+        {
+            "id": 5,
+            "tipo": "alumno",
+            "ref_id": 260,
+            "nombre": "Benítez Rojas, Dylan Nicolás",
+            "grado": "90",
+            "seccion": "T",
+            "fecha": "2026-07-07",
+            "hora": "16:38:34",
+            "estado": "Presente",
+            "trabajo_clase": 0
+        },
+        {
+            "id": 6,
+            "tipo": "alumno",
+            "ref_id": 261,
+            "nombre": "Bogado Martínez, Milagros Belén",
+            "grado": "90",
+            "seccion": "T",
+            "fecha": "2026-07-07",
+            "hora": "16:38:34",
+            "estado": "Presente",
+            "trabajo_clase": 0
+        },
+        {
+            "id": 7,
+            "tipo": "alumno",
+            "ref_id": 262,
+            "nombre": "Caballero Duarte, Lucas Gabriel",
+            "grado": "90",
+            "seccion": "T",
+            "fecha": "2026-07-07",
+            "hora": "16:38:34",
+            "estado": "Presente",
+            "trabajo_clase": 0
+        },
+        {
+            "id": 8,
+            "tipo": "alumno",
+            "ref_id": 263,
+            "nombre": "Cáceres Vera, Julieta Antonella",
+            "grado": "90",
+            "seccion": "T",
+            "fecha": "2026-07-07",
+            "hora": "16:38:34",
+            "estado": "Presente",
+            "trabajo_clase": 0
+        },
+        {
+            "id": 9,
+            "tipo": "alumno",
+            "ref_id": 264,
+            "nombre": "Cardozo Benítez, Samuel David",
+            "grado": "90",
+            "seccion": "T",
+            "fecha": "2026-07-07",
+            "hora": "16:38:34",
+            "estado": "Presente",
+            "trabajo_clase": 0
+        },
+        {
+            "id": 10,
+            "tipo": "alumno",
+            "ref_id": 265,
+            "nombre": "Duarte Giménez, Valeria Nicole",
+            "grado": "90",
+            "seccion": "T",
+            "fecha": "2026-07-07",
+            "hora": "16:38:34",
+            "estado": "Presente",
+            "trabajo_clase": 0
+        },
+        {
+            "id": 11,
+            "tipo": "alumno",
+            "ref_id": 266,
+            "nombre": "Escobar Ferreira, Joaquín Matheo",
+            "grado": "90",
+            "seccion": "T",
+            "fecha": "2026-07-07",
+            "hora": "16:38:34",
+            "estado": "Presente",
+            "trabajo_clase": 0
+        },
+        {
+            "id": 12,
+            "tipo": "alumno",
+            "ref_id": 267,
+            "nombre": "Fernández Acosta, Zoe Isabella",
+            "grado": "90",
+            "seccion": "T",
+            "fecha": "2026-07-07",
+            "hora": "16:38:34",
+            "estado": "Presente",
+            "trabajo_clase": 0
+        },
+        {
+            "id": 13,
+            "tipo": "alumno",
+            "ref_id": 268,
+            "nombre": "Ferreira López, Ian Sebastián",
+            "grado": "90",
+            "seccion": "T",
+            "fecha": "2026-07-07",
+            "hora": "16:38:34",
+            "estado": "Presente",
+            "trabajo_clase": 0
+        },
+        {
+            "id": 14,
+            "tipo": "alumno",
+            "ref_id": 269,
+            "nombre": "Franco Bogado, Mía Guadalupe",
+            "grado": "90",
+            "seccion": "T",
+            "fecha": "2026-07-07",
+            "hora": "16:38:34",
+            "estado": "Presente",
+            "trabajo_clase": 0
+        },
+        {
+            "id": 15,
+            "tipo": "alumno",
+            "ref_id": 270,
+            "nombre": "Giménez Ayala, Benjamín Elías",
+            "grado": "90",
+            "seccion": "T",
+            "fecha": "2026-07-07",
+            "hora": "16:38:34",
+            "estado": "Presente",
+            "trabajo_clase": 0
+        },
+        {
+            "id": 16,
+            "tipo": "alumno",
+            "ref_id": 271,
+            "nombre": "González Cardozo, Emily Sofía",
+            "grado": "90",
+            "seccion": "T",
+            "fecha": "2026-07-07",
+            "hora": "16:38:34",
+            "estado": "Presente",
+            "trabajo_clase": 0
+        },
+        {
+            "id": 17,
+            "tipo": "alumno",
+            "ref_id": 272,
+            "nombre": "López Romero, Thiago Adrián",
+            "grado": "90",
+            "seccion": "T",
+            "fecha": "2026-07-07",
+            "hora": "16:38:34",
+            "estado": "Presente",
+            "trabajo_clase": 0
+        },
+        {
+            "id": 18,
+            "tipo": "alumno",
+            "ref_id": 273,
+            "nombre": "Martínez Rivas, Antonella Paz",
+            "grado": "90",
+            "seccion": "T",
+            "fecha": "2026-07-07",
+            "hora": "16:38:34",
+            "estado": "Presente",
+            "trabajo_clase": 0
+        },
+        {
+            "id": 19,
+            "tipo": "alumno",
+            "ref_id": 274,
+            "nombre": "Medina Benítez, Santiago Joel",
+            "grado": "90",
+            "seccion": "T",
+            "fecha": "2026-07-07",
+            "hora": "16:38:34",
+            "estado": "Presente",
+            "trabajo_clase": 0
+        },
+        {
+            "id": 20,
+            "tipo": "alumno",
+            "ref_id": 275,
+            "nombre": "Morínigo Duarte, Ariana Liz",
+            "grado": "90",
+            "seccion": "T",
+            "fecha": "2026-07-07",
+            "hora": "16:38:34",
+            "estado": "Ausente",
+            "trabajo_clase": 0
+        },
+        {
+            "id": 21,
+            "tipo": "alumno",
+            "ref_id": 276,
+            "nombre": "Núñez Báez, Kevin Alexis",
+            "grado": "90",
+            "seccion": "T",
+            "fecha": "2026-07-07",
+            "hora": "16:38:34",
+            "estado": "Ausente",
+            "trabajo_clase": 0
+        },
+        {
+            "id": 22,
+            "tipo": "alumno",
+            "ref_id": 277,
+            "nombre": "Ortiz Ferreira, Aitana Celeste",
+            "grado": "90",
+            "seccion": "T",
+            "fecha": "2026-07-07",
+            "hora": "16:38:34",
+            "estado": "Ausente",
+            "trabajo_clase": 0
+        },
+        {
+            "id": 23,
+            "tipo": "alumno",
+            "ref_id": 278,
+            "nombre": "Ramírez Gómez, Gael Augusto",
+            "grado": "90",
+            "seccion": "T",
+            "fecha": "2026-07-07",
+            "hora": "16:38:34",
+            "estado": "Ausente",
+            "trabajo_clase": 0
+        },
+        {
+            "id": 24,
+            "tipo": "alumno",
+            "ref_id": 279,
+            "nombre": "Rojas Benítez, Valentina Rocío",
+            "grado": "90",
+            "seccion": "T",
+            "fecha": "2026-07-07",
+            "hora": "16:38:34",
+            "estado": "Ausente",
+            "trabajo_clase": 0
+        },
+        {
+            "id": 25,
+            "tipo": "alumno",
+            "ref_id": 280,
+            "nombre": "Vera González, Nicolás Andrés",
+            "grado": "90",
+            "seccion": "T",
+            "fecha": "2026-07-07",
+            "hora": "16:38:34",
+            "estado": "Ausente",
+            "trabajo_clase": 0
+        }
+    ],
+    "galerias": [
+        {
+            "id": 1,
+            "titulo": "Primera clase",
+            "descripcion": "Actividades desarrolladas por los estudiantes del 3° BTI.",
+            "imagen": "assets\/img\/galeria\/foto1.jpeg",
+            "categoria": "clases",
+            "categoriaLabel": "Clases",
+            "fecha": "2026-07-06"
+        },
+        {
+            "id": 2,
+            "titulo": "Primera clase",
+            "descripcion": "Actividades desarrolladas por los estudiantes del 3° BTI.",
+            "imagen": "assets\/img\/galeria\/foto2.jpeg",
+            "categoria": "clases",
+            "categoriaLabel": "Clases",
+            "fecha": "2026-07-06"
+        },
+        {
+            "id": 3,
+            "titulo": "Primera clase",
+            "descripcion": "Actividades desarrolladas por los estudiantes del 3° BTI.",
+            "imagen": "assets\/img\/galeria\/foto3.jpeg",
+            "categoria": "clases",
+            "categoriaLabel": "Clases",
+            "fecha": "2026-07-06"
+        },
+        {
+            "id": 4,
+            "titulo": "Primera clase",
+            "descripcion": "Actividades desarrolladas por los estudiantes del 3° BTI.",
+            "imagen": "assets\/img\/galeria\/foto4.jpeg",
+            "categoria": "clases",
+            "categoriaLabel": "Clases",
+            "fecha": "2026-07-06"
+        },
+        {
+            "id": 5,
+            "titulo": "Primera clase",
+            "descripcion": "Actividades desarrolladas por los estudiantes del 3° BTI.",
+            "imagen": "assets\/img\/galeria\/foto5.jpeg",
+            "categoria": "clases",
+            "categoriaLabel": "Clases",
+            "fecha": "2026-07-06"
+        },
+        {
+            "id": 6,
+            "titulo": "Primera clase",
+            "descripcion": "Actividades desarrolladas por los estudiantes del 3° BTI.",
+            "imagen": "assets\/img\/galeria\/foto6.jpeg",
+            "categoria": "clases",
+            "categoriaLabel": "Clases",
+            "fecha": "2026-07-06"
+        },
+        {
+            "id": 7,
+            "titulo": "Primera clase",
+            "descripcion": "Actividades desarrolladas por los estudiantes del 3° BTI.",
+            "imagen": "assets\/img\/galeria\/foto7.jpeg",
+            "categoria": "clases",
+            "categoriaLabel": "Clases",
+            "fecha": "2026-07-06"
+        },
+        {
+            "id": 8,
+            "titulo": "Primera clase",
+            "descripcion": "Actividades desarrolladas por los estudiantes del 3° BTI.",
+            "imagen": "assets\/img\/galeria\/foto8.jpeg",
+            "categoria": "clases",
+            "categoriaLabel": "Clases",
+            "fecha": "2026-07-06"
+        },
+        {
+            "id": 9,
+            "titulo": "Primera clase",
+            "descripcion": "Actividades desarrolladas por los estudiantes del 3° BTI.",
+            "imagen": "assets\/img\/galeria\/foto9.jpeg",
+            "categoria": "clases",
+            "categoriaLabel": "Clases",
+            "fecha": "2026-07-06"
+        },
+        {
+            "id": 10,
+            "titulo": "Primera clase",
+            "descripcion": "Actividades desarrolladas por los estudiantes del 3° BTI.",
+            "imagen": "assets\/img\/galeria\/foto10.jpeg",
+            "categoria": "clases",
+            "categoriaLabel": "Clases",
+            "fecha": "2026-07-06"
+        },
+        {
+            "id": 11,
+            "titulo": "Primera clase",
+            "descripcion": "Actividades desarrolladas por los estudiantes del 3° BTI.",
+            "imagen": "assets\/img\/galeria\/foto11.jpeg",
+            "categoria": "clases",
+            "categoriaLabel": "Clases",
+            "fecha": "2026-07-06"
+        },
+        {
+            "id": 12,
+            "titulo": "Primera clase",
+            "descripcion": "Actividades desarrolladas por los estudiantes del 3° BTI.",
+            "imagen": "assets\/img\/galeria\/foto12.jpeg",
+            "categoria": "clases",
+            "categoriaLabel": "Clases",
+            "fecha": "2026-07-06"
+        }
+    ],
+    "experiencias": []
+}

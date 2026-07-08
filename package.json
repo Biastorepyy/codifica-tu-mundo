@@ -1,0 +1,19 @@
+{
+  "name": "pronus",
+  "version": "1.0.0",
+  "description": "Proyecto Integrador - 3° BTI CRECE (Estilo Aranduka)",
+  "main": "index.php",
+  "scripts": {
+    "dev": "php -S localhost:8000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "php",
+    "bti",
+    "crece",
+    "aranduka",
+    "vercel"
+  ],
+  "author": "3° BTI CRECE",
+  "license": "ISC"
+}

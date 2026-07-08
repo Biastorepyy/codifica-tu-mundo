@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "functions": {
+    "index.php": {
+      "runtime": "vercel-php@0.8.0"
+    },
+    "galeria.php": {
+      "runtime": "vercel-php@0.8.0"
+    },
+    "proyectos.php": {
+      "runtime": "vercel-php@0.8.0"
+    },
+    "planificaciones.php": {
+      "runtime": "vercel-php@0.8.0"
+    },
+    "historia.php": {
+      "runtime": "vercel-php@0.8.0"
+    },
+    "asistencia.php": {
+      "runtime": "vercel-php@0.8.0"
+    },
+    "ubicacion.php": {
+      "runtime": "vercel-php@0.8.0"
+    }
+  },
+  "routes": [
+    { "src": "/assets/(.*)", "dest": "/assets/$1" },
+    { "src": "/docs/(.*)", "dest": "/docs/$1" },
+    { "src": "/galeria", "dest": "/galeria.php" },
+    { "src": "/proyectos", "dest": "/proyectos.php" },
+    { "src": "/planificaciones", "dest": "/planificaciones.php" },
+    { "src": "/historia", "dest": "/historia.php" },
+    { "src": "/asistencia", "dest": "/asistencia.php" },
+    { "src": "/ubicacion", "dest": "/ubicacion.php" },
+    { "src": "/index", "dest": "/index.php" },
+    { "src": "/(.*)", "dest": "/index.php" }
+  ]
+}

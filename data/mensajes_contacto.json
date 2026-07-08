@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "nombre": "juan david",
+        "email": "josephfretez837@gmail.com",
+        "asunto": "pilin",
+        "mensaje": "juan davia qre pilin",
+        "fecha_envio": "2026-06-17 15:24:49"
+    },
+    {
+        "id": 2,
+        "nombre": "juan david",
+        "email": "josephfretez837@gmail.com",
+        "asunto": "pilin",
+        "mensaje": "juan davia qre pilin",
+        "fecha_envio": "2026-06-17 15:24:59"
+    },
+    {
+        "id": 3,
+        "nombre": "Juan petes",
+        "email": "oscarperritapromax@gmail.com",
+        "asunto": "Soy gay y le debo un pete a mathi",
+        "mensaje": "KASJDkjwadkawjkdfkasjdi Hla",
+        "fecha_envio": "2026-06-17 15:27:21"
+    }
+]
