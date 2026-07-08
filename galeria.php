@@ -6,47 +6,7 @@ session_start();
  */
 require_once __DIR__ . '/includes/db.php';
 
-// --- Procesar subida de imagen ---
-$mensajeExito = '';
-$mensajeError = '';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['imagen'])) {
-    $titulo = trim($_POST['titulo'] ?? '');
-    $categoria = $_POST['categoria'] ?? 'clases';
-    $descripcion = trim($_POST['descripcion'] ?? '');
-    $fecha = date('Y-m-d');
-    
-    // Validaciones básicas
-    if (empty($titulo)) {
-        $mensajeError = "Por favor, ingresa un título para la imagen.";
-    } elseif ($_FILES['imagen']['error'] !== UPLOAD_ERR_OK) {
-        $mensajeError = "Ocurrió un error al subir la imagen.";
-    } else {
-        $tmpName = $_FILES['imagen']['tmp_name'];
-        $fileName = basename($_FILES['imagen']['name']);
-        
-        // Generar un nombre único para evitar colisiones
-        $uniqueName = uniqid() . '_' . preg_replace('/[^a-zA-Z0-9_\.-]/', '', $fileName);
-        
-        $uploadDir = __DIR__ . '/assets/img/galeria/';
-        if (!is_dir($uploadDir)) {
-            @mkdir($uploadDir, 0777, true);
-        }
-        $destPath = $uploadDir . $uniqueName;
-        
-        if (move_uploaded_file($tmpName, $destPath)) {
-            $rutaRelativa = 'assets/img/galeria/' . $uniqueName;
-            
-            if (db_add_galeria($titulo, $descripcion, $rutaRelativa, $categoria, $fecha)) {
-                $mensajeExito = "¡Imagen subida y publicada correctamente!";
-            } else {
-                $mensajeError = "La imagen se subió, pero no pudo guardarse en la base de datos.";
-            }
-        } else {
-            $mensajeError = "No se pudo mover el archivo subido al directorio de destino.";
-        }
-    }
-}
 
 
 $pageTitle = "Galería de Evidencias";
@@ -451,7 +411,7 @@ $galeriaItems = db_get_galerias();
     align-items: center;
     justify-content: center;
     transition: background 0.2s ease, transform 0.2s ease;
-    z-index: 3001;
+    z-index: 3010; /* Mayor que los overlays */
 }
 
 .lightbox-close-btn:hover {
@@ -467,6 +427,33 @@ $galeriaItems = db_get_galerias();
     margin-top: 0.5rem !important;
 }
 
+/* ── Responsive adjustments para Lightbox ──────── */
+@media (max-width: 768px) {
+    .lightbox-overlay-baner {
+        height: 60px !important;
+        left: 10px;
+        top: 10px;
+    }
+    .lightbox-overlay-escudo {
+        height: 75px !important;
+        right: 10px;
+        top: 10px;
+    }
+    .lightbox-close-btn {
+        top: 0.75rem;
+        right: 0.75rem;
+        width: 36px;
+        height: 36px;
+        font-size: 1.2rem;
+    }
+    .lightbox-inner {
+        max-width: 95%;
+        max-height: 85%;
+    }
+    .lightbox-img {
+        max-height: 65vh;
+    }
+}
 </style>
 
 <main class="main-content">
@@ -477,54 +464,7 @@ $galeriaItems = db_get_galerias();
         <p class="section-description">Registro visual e interactivo de las actividades del Bachillerato Técnico en Informática.</p>
     </div>
 
-    <!-- Mensajes de subida -->
-    <?php if ($mensajeExito): ?>
-        <div style="background: #d4edda; color: #155724; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem;">
-            <?php echo $mensajeExito; ?>
-        </div>
-    <?php endif; ?>
-    <?php if ($mensajeError): ?>
-        <div style="background: #f8d7da; color: #721c24; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem;">
-            <?php echo $mensajeError; ?>
-        </div>
-    <?php endif; ?>
 
-    <!-- Botón para mostrar formulario -->
-    <div style="text-align: right; margin-bottom: 1rem;">
-        <button id="toggleUploadBtn" class="upload-btn">+ Añadir Imagen</button>
-    </div>
-
-    <!-- Formulario para cargar nuevas fotos -->
-    <div class="upload-wrapper" id="uploadFormContainer" style="display: none;">
-        <h3 class="upload-title">
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg>
-            Publicar Nueva Imagen
-        </h3>
-        <form class="upload-form" action="galeria.php" method="POST" enctype="multipart/form-data">
-            <div class="upload-row">
-                <div class="upload-field">
-                    <label for="titulo">Título de la imagen</label>
-                    <input type="text" id="titulo" name="titulo" class="upload-input" placeholder="Ej: Presentación Final" required>
-                </div>
-                <div class="upload-field">
-                    <label for="categoria">Categoría</label>
-                    <select id="categoria" name="categoria" class="upload-input" required>
-                        <option value="clases">Clases</option>
-                        <option value="defensas">Defensa</option>
-                    </select>
-                </div>
-            </div>
-            <div class="upload-field" style="width: 100%;">
-                <label for="descripcion">Descripción (opcional)</label>
-                <input type="text" id="descripcion" name="descripcion" class="upload-input" placeholder="Breve descripción de la actividad">
-            </div>
-            <div class="upload-field">
-                <label for="imagen">Archivo de imagen</label>
-                <input type="file" id="imagen" name="imagen" class="upload-input" accept="image/*" required style="padding: 0.4rem;">
-            </div>
-            <button type="submit" class="upload-btn">Subir Imagen</button>
-        </form>
-    </div>
 
     <!-- Filtros Multi-faceta Premium -->
     <div class="filter-wrapper" id="gallery-filters-container">
@@ -535,7 +475,23 @@ $galeriaItems = db_get_galerias();
             <button class="filter-btn" data-filter="defensas">Defensa</button>
         </div>
         
-        <div class="results-counter" id="gallery-counter" style="font-weight: 600;">
+        <div class="filter-group" id="filter-grado">
+            <span class="filter-label">GRADO:</span>
+            <button class="filter-btn active" data-filter="todos">Todos</button>
+            <button class="filter-btn" data-filter="5">5° Grado</button>
+            <button class="filter-btn" data-filter="6">6° Grado</button>
+        </div>
+
+        <div class="filter-group" id="filter-seccion">
+            <span class="filter-label">SECCIÓN:</span>
+            <button class="filter-btn active" data-filter="todos">Todas</button>
+            <button class="filter-btn" data-filter="A">A</button>
+            <button class="filter-btn" data-filter="B">B</button>
+            <button class="filter-btn" data-filter="C">C</button>
+            <button class="filter-btn" data-filter="D">D</button>
+        </div>
+        
+        <div class="results-counter" id="gallery-counter" style="font-weight: 600; width: 100%; text-align: right; margin-top: 1rem;">
             Mostrando <strong id="gallery-count" style="color: var(--color-primary);"><?php echo count($galeriaItems); ?></strong> registros
         </div>
     </div>
@@ -546,6 +502,8 @@ $galeriaItems = db_get_galerias();
             <article
                 class="gallery-card"
                 data-cat="<?php echo htmlspecialchars($item['categoria'] ?? 'clases'); ?>"
+                data-grado="<?php echo htmlspecialchars($item['grado'] ?? 'todos'); ?>"
+                data-seccion="<?php echo htmlspecialchars($item['seccion'] ?? 'todos'); ?>"
                 id="gallery-item-<?php echo htmlspecialchars($item['id'] ?? $i); ?>"
                 data-index="<?php echo $i; ?>"
             >
@@ -579,6 +537,11 @@ $galeriaItems = db_get_galerias();
                 <div class="gallery-card-body">
                     <div class="gallery-meta">
                         <span class="gallery-cat-badge"><?php echo htmlspecialchars($item['categoriaLabel'] ?? 'Clases'); ?></span>
+                        <?php if(!empty($item['grado']) && !empty($item['seccion'])): ?>
+                            <span class="gallery-cat-badge" style="background: var(--color-secondary); margin-left: 0.5rem;">
+                                <?php echo htmlspecialchars($item['grado'] . '° ' . $item['seccion']); ?>
+                            </span>
+                        <?php endif; ?>
                         <span class="gallery-date" style="margin-left: auto;">
                             <?php 
                                 // Formatear fecha si está disponible
@@ -617,33 +580,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* ── Filtros Combinados ────────────────────── */
     const filterCatBtns   = document.querySelectorAll('#filter-categoria .filter-btn');
+    const filterGradoBtns = document.querySelectorAll('#filter-grado .filter-btn');
+    const filterSeccionBtns = document.querySelectorAll('#filter-seccion .filter-btn');
     const cards           = document.querySelectorAll('#gallery-grid .gallery-card');
     const countEl         = document.getElementById('gallery-count');
 
-    // Toggle Upload Form
-    const toggleUploadBtn = document.getElementById('toggleUploadBtn');
-    const uploadFormContainer = document.getElementById('uploadFormContainer');
-    if (toggleUploadBtn && uploadFormContainer) {
-        toggleUploadBtn.addEventListener('click', () => {
-            if (uploadFormContainer.style.display === 'none') {
-                uploadFormContainer.style.display = 'block';
-                toggleUploadBtn.textContent = 'Ocultar Formulario';
-            } else {
-                uploadFormContainer.style.display = 'none';
-                toggleUploadBtn.textContent = '+ Añadir Imagen';
-            }
-        });
-    }
-
     let activeCat         = 'todos';
+    let activeGrado       = 'todos';
+    let activeSeccion     = 'todos';
 
     function applyFilters() {
         let n = 0;
         cards.forEach(card => {
             const cat = card.getAttribute('data-cat');
+            const grado = card.getAttribute('data-grado');
+            const seccion = card.getAttribute('data-seccion');
+            
             const matchCat = activeCat === 'todos' || cat === activeCat;
+            const matchGrado = activeGrado === 'todos' || grado === activeGrado;
+            const matchSeccion = activeSeccion === 'todos' || seccion === activeSeccion;
 
-            const show = matchCat;
+            const show = matchCat && matchGrado && matchSeccion;
             card.classList.toggle('hidden', !show);
             if (show) n++;
         });
@@ -656,6 +613,26 @@ document.addEventListener('DOMContentLoaded', () => {
             filterCatBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             activeCat = btn.getAttribute('data-filter');
+            applyFilters();
+        });
+    });
+
+    /* Eventos para botones de grado */
+    filterGradoBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterGradoBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            activeGrado = btn.getAttribute('data-filter');
+            applyFilters();
+        });
+    });
+
+    /* Eventos para botones de seccion */
+    filterSeccionBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterSeccionBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            activeSeccion = btn.getAttribute('data-filter');
             applyFilters();
         });
     });

@@ -15,6 +15,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 $db_host = getenv('DB_HOST') ?: 'localhost';
+$db_port = getenv('DB_PORT') ?: '3306';
 $db_name = getenv('DB_NAME') ?: 'crece_bti';
 $db_user = getenv('DB_USER') ?: 'root';
 $db_pass = getenv('DB_PASS') ?: '';
@@ -24,7 +25,7 @@ $db_mode = 'json'; // Modo por defecto en caso de fallo
 
 try {
     // Conexión PDO con un timeout corto para que el fallback sea inmediato si MySQL está apagado
-    $pdo = new PDO("mysql:host=$db_host;dbname=$db_name;charset=utf8mb4", $db_user, $db_pass, [
+    $pdo = new PDO("mysql:host=$db_host;port=$db_port;dbname=$db_name;charset=utf8mb4", $db_user, $db_pass, [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
         PDO::ATTR_TIMEOUT => 2
@@ -565,11 +566,15 @@ function db_get_galerias() {
 }
 
 // Agregar elemento a la galería
-function db_add_galeria($titulo, $descripcion, $imagen, $categoria, $fecha) {
+function db_add_galeria($titulo, $descripcion, $imagen, $categoria, $fecha, $grado = null, $seccion = null) {
     global $pdo, $db_mode;
     $categoriaLabel = ($categoria === 'defensas') ? 'Defensa' : 'Clases';
     
     if ($db_mode === 'mysql' && $pdo) {
+        try {
+            $pdo->exec("ALTER TABLE galerias ADD COLUMN grado INT NULL, ADD COLUMN seccion VARCHAR(10) NULL");
+        } catch (PDOException $e) { }
+
         try {
             $stmt = $pdo->query("CREATE TABLE IF NOT EXISTS galerias (
                 id INT AUTO_INCREMENT PRIMARY KEY,
@@ -578,11 +583,13 @@ function db_add_galeria($titulo, $descripcion, $imagen, $categoria, $fecha) {
                 imagen VARCHAR(255) NOT NULL,
                 categoria VARCHAR(50) NOT NULL,
                 categoriaLabel VARCHAR(50) NOT NULL,
-                fecha DATE NOT NULL
+                fecha DATE NOT NULL,
+                grado INT NULL,
+                seccion VARCHAR(10) NULL
             ) ENGINE=InnoDB");
             
-            $stmt = $pdo->prepare("INSERT INTO galerias (titulo, descripcion, imagen, categoria, categoriaLabel, fecha) VALUES (?, ?, ?, ?, ?, ?)");
-            $stmt->execute([$titulo, $descripcion, $imagen, $categoria, $categoriaLabel, $fecha]);
+            $stmt = $pdo->prepare("INSERT INTO galerias (titulo, descripcion, imagen, categoria, categoriaLabel, fecha, grado, seccion) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+            $stmt->execute([$titulo, $descripcion, $imagen, $categoria, $categoriaLabel, $fecha, $grado, $seccion]);
             return true;
         } catch (PDOException $e) {
             // Fallback
@@ -600,7 +607,9 @@ function db_add_galeria($titulo, $descripcion, $imagen, $categoria, $fecha) {
         'imagen'         => $imagen,
         'categoria'      => $categoria,
         'categoriaLabel' => $categoriaLabel,
-        'fecha'          => $fecha
+        'fecha'          => $fecha,
+        'grado'          => $grado,
+        'seccion'        => $seccion
     ];
     $data['galerias'][] = $item;
     saveJsonData($data);
