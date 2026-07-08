@@ -427,28 +427,45 @@ $galeriaItems = db_get_galerias();
     margin-top: 0.5rem !important;
 }
 
-/* ── Responsive adjustments para Lightbox ──────── */
+/* ── Responsive adjustments para Lightbox y Galería ──────── */
 @media (max-width: 768px) {
+    /* Ajustes para las tarjetas de galería (thumbnails) */
+    .overlay-baner {
+        height: 40px !important;
+        left: 8px;
+        top: 8px;
+    }
+    .overlay-escudo {
+        height: 50px !important;
+        right: 8px;
+        top: 8px;
+    }
+
+    /* Ajustes para el Lightbox ampliado */
     .lightbox-overlay-baner {
-        height: 60px !important;
+        height: 45px !important;
         left: 10px;
         top: 10px;
     }
     .lightbox-overlay-escudo {
-        height: 75px !important;
+        height: 55px !important;
         right: 10px;
         top: 10px;
+        /* Bajamos el opacidad o lo ocultamos si es necesario, pero achicarlo sirve */
     }
     .lightbox-close-btn {
-        top: 0.75rem;
-        right: 0.75rem;
-        width: 36px;
-        height: 36px;
-        font-size: 1.2rem;
+        top: 10px;
+        right: 10px;
+        width: 38px;
+        height: 38px;
+        font-size: 1.1rem;
+        background: rgba(0, 0, 0, 0.7);
+        border: 2px solid rgba(255, 255, 255, 0.5);
     }
     .lightbox-inner {
         max-width: 95%;
         max-height: 85%;
+        margin-top: 45px; /* Para asegurar que el escudo y el banner no choquen con el botón de cerrar */
     }
     .lightbox-img {
         max-height: 65vh;
