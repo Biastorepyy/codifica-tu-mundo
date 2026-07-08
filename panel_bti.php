@@ -81,37 +81,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $tmpName = $_FILES['imagen']['tmp_name'];
             $fileName = basename($_FILES['imagen']['name']);
             
-            // Subir la imagen a Catbox.moe (Hosting gratuito de archivos en la nube)
-            $ch = curl_init();
-            $cfile = new CURLFile($tmpName, mime_content_type($tmpName), $fileName);
-            $data = array(
-                'reqtype' => 'fileupload',
-                'fileToUpload' => $cfile
-            );
+            // Guardar localmente en lugar de depender de la nube
+            $extension = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
+            $newFileName = uniqid() . '_' . time() . '.' . $extension;
+            $uploadDir = __DIR__ . '/assets/img/galeria/';
             
-            curl_setopt($ch, CURLOPT_URL, "https://catbox.moe/user/api.php");
-            curl_setopt($ch, CURLOPT_POST, true);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            // Evitar problemas de certificados SSL en algunos servidores
-            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            if (!is_dir($uploadDir)) {
+                @mkdir($uploadDir, 0777, true);
+            }
             
-            $catboxUrl = curl_exec($ch);
-            $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-            curl_close($ch);
+            $destination = $uploadDir . $newFileName;
             
-            if ($httpCode === 200 && filter_var(trim($catboxUrl), FILTER_VALIDATE_URL)) {
-                $rutaRelativa = trim($catboxUrl); // La URL que nos devuelve Catbox
+            if (move_uploaded_file($tmpName, $destination)) {
+                $rutaRelativa = 'assets/img/galeria/' . $newFileName;
                 
                 if (db_add_galeria($titulo, $descripcion, $rutaRelativa, $categoria, $fecha, $grado, $seccion)) {
-                    $_SESSION['flash_msg'] = "¡Imagen subida a la nube y publicada correctamente!";
+                    $_SESSION['flash_msg'] = "¡Imagen subida a la galería correctamente!";
                     $_SESSION['flash_type'] = "success";
                 } else {
-                    $_SESSION['flash_msg'] = "La imagen se subió a la nube, pero no pudo guardarse en la base de datos.";
+                    $_SESSION['flash_msg'] = "La imagen se subió, pero no pudo guardarse en la base de datos.";
                     $_SESSION['flash_type'] = "error";
                 }
             } else {
-                $_SESSION['flash_msg'] = "Error al subir la imagen al servidor en la nube. Intenta de nuevo.";
+                $_SESSION['flash_msg'] = "Error al guardar la imagen en el servidor. Verifica los permisos de carpeta.";
                 $_SESSION['flash_type'] = "error";
             }
         }
