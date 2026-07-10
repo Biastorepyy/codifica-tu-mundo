@@ -262,9 +262,11 @@ function db_get_asistencias() {
     return $data['asistencias'];
 }
 
-// Registrar Alumno
+// Registrar Alumno (MySQL y JSON)
 function db_add_estudiante($nombre, $grado, $seccion = 'A') {
     global $pdo, $db_mode;
+    $mysql_success = false;
+    $mysql_id = null;
     if ($db_mode === 'mysql' && $pdo) {
         try {
             // Obtener ID del grado correspondiente
@@ -280,48 +282,85 @@ function db_add_estudiante($nombre, $grado, $seccion = 'A') {
                 $gradoId = $pdo->lastInsertId();
             }
 
-            // Comprobar si existe la columna seccion (por si acaso la migración no corrió)
             $stmt = $pdo->prepare("INSERT INTO estudiantes (nombre, grado_id, seccion) VALUES (?, ?, ?)");
-            return $stmt->execute([$nombre, $gradoId, $seccion]);
-        } catch (PDOException $e) {
-            // Fallback (podría fallar si la columna no existe en bd vieja, en ese caso usar fallback json temporalmente)
-        }
-    }
-    $data = getJsonData();
-    $newId = count($data['estudiantes']) > 0 ? max(array_column($data['estudiantes'], 'id')) + 1 : 1;
-    $data['estudiantes'][] = [
-        "id" => $newId,
-        "nombre" => $nombre,
-        "grado" => $grado,
-        "seccion" => $seccion
-    ];
-    saveJsonData($data);
-    return true;
-}
-
-// Registrar Profesor
-function db_add_profesor($nombre, $materia) {
-    global $pdo, $db_mode;
-    if ($db_mode === 'mysql' && $pdo) {
-        try {
-            $stmt = $pdo->prepare("INSERT INTO profesores (nombre, materia) VALUES (?, ?)");
-            return $stmt->execute([$nombre, $materia]);
+            $mysql_success = $stmt->execute([$nombre, $gradoId, $seccion]);
+            if ($mysql_success) {
+                $mysql_id = $pdo->lastInsertId();
+            }
         } catch (PDOException $e) {
             // Fallback
         }
     }
+    
+    // Guardar también en JSON
     $data = getJsonData();
-    $newId = count($data['profesores']) > 0 ? max(array_column($data['profesores'], 'id')) + 1 : 1;
-    $data['profesores'][] = [
-        "id" => $newId,
-        "nombre" => $nombre,
-        "materia" => $materia
-    ];
+    // Usar el ID de MySQL si fue exitoso, de lo contrario auto-incrementar en JSON
+    $newId = $mysql_id ?: (count($data['estudiantes']) > 0 ? max(array_column($data['estudiantes'], 'id')) + 1 : 1);
+    
+    // Evitar duplicados por ID en JSON si ya existe
+    $exists = false;
+    foreach ($data['estudiantes'] as &$est) {
+        if ($est['id'] == $newId) {
+            $est['nombre'] = $nombre;
+            $est['grado'] = $grado;
+            $est['seccion'] = $seccion;
+            $exists = true;
+            break;
+        }
+    }
+    if (!$exists) {
+        $data['estudiantes'][] = [
+            "id" => (int)$newId,
+            "nombre" => $nombre,
+            "grado" => $grado,
+            "seccion" => $seccion
+        ];
+    }
     saveJsonData($data);
     return true;
 }
 
-// Guardar Asistencias
+// Registrar Profesor (MySQL y JSON)
+function db_add_profesor($nombre, $materia) {
+    global $pdo, $db_mode;
+    $mysql_success = false;
+    $mysql_id = null;
+    if ($db_mode === 'mysql' && $pdo) {
+        try {
+            $stmt = $pdo->prepare("INSERT INTO profesores (nombre, materia) VALUES (?, ?)");
+            $mysql_success = $stmt->execute([$nombre, $materia]);
+            if ($mysql_success) {
+                $mysql_id = $pdo->lastInsertId();
+            }
+        } catch (PDOException $e) {
+            // Fallback
+        }
+    }
+    
+    $data = getJsonData();
+    $newId = $mysql_id ?: (count($data['profesores']) > 0 ? max(array_column($data['profesores'], 'id')) + 1 : 1);
+    
+    $exists = false;
+    foreach ($data['profesores'] as &$prof) {
+        if ($prof['id'] == $newId) {
+            $prof['nombre'] = $nombre;
+            $prof['materia'] = $materia;
+            $exists = true;
+            break;
+        }
+    }
+    if (!$exists) {
+        $data['profesores'][] = [
+            "id" => (int)$newId,
+            "nombre" => $nombre,
+            "materia" => $materia
+        ];
+    }
+    saveJsonData($data);
+    return true;
+}
+
+// Guardar Asistencias (Dual/Backup en JSON permanente)
 function db_save_asistencias($tipo, $fecha, $asistencias, $trabajo = []) {
     global $pdo, $db_mode;
     
@@ -332,6 +371,7 @@ function db_save_asistencias($tipo, $fecha, $asistencias, $trabajo = []) {
         } catch (PDOException $e) { }
     }
     
+    $mysql_success = false;
     if ($db_mode === 'mysql' && $pdo) {
         try {
             $pdo->beginTransaction();
@@ -362,17 +402,17 @@ function db_save_asistencias($tipo, $fecha, $asistencias, $trabajo = []) {
             }
             
             $pdo->commit();
-            return true;
+            $mysql_success = true;
         } catch (PDOException $e) {
             $pdo->rollBack();
             // Fallback
         }
     }
     
-    // Modo JSON Fallback
+    // Modo JSON Fallback / Backup Permanente (siempre guardamos una copia en JSON)
     $data = getJsonData();
     
-    // Eliminar previos
+    // Eliminar previos en JSON
     $data['asistencias'] = array_filter($data['asistencias'], function($item) use ($tipo, $fecha) {
         return !($item['tipo'] === $tipo && $item['fecha'] === $fecha);
     });
@@ -385,9 +425,20 @@ function db_save_asistencias($tipo, $fecha, $asistencias, $trabajo = []) {
         
         if ($tipo === 'alumno') {
             $estudiante = null;
-            foreach ($data['estudiantes'] as $est) {
-                if ($est['id'] == $refId) { $estudiante = $est; break; }
+            if ($mysql_success) {
+                try {
+                    $stmt = $pdo->prepare("SELECT e.nombre, e.seccion, REPLACE(g.nombre, ' Grado', '') as grado FROM estudiantes e JOIN grados g ON e.grado_id = g.id WHERE e.id = ?");
+                    $stmt->execute([(int)$refId]);
+                    $estudiante = $stmt->fetch();
+                } catch (PDOException $ex) { }
             }
+            
+            if (!$estudiante) {
+                foreach ($data['estudiantes'] as $est) {
+                    if ($est['id'] == $refId) { $estudiante = $est; break; }
+                }
+            }
+            
             if ($estudiante) {
                 $data['asistencias'][] = [
                     "id" => $nextId++,
@@ -404,9 +455,20 @@ function db_save_asistencias($tipo, $fecha, $asistencias, $trabajo = []) {
             }
         } else {
             $profesor = null;
-            foreach ($data['profesores'] as $prof) {
-                if ($prof['id'] == $refId) { $profesor = $prof; break; }
+            if ($mysql_success) {
+                try {
+                    $stmt = $pdo->prepare("SELECT nombre, materia FROM profesores WHERE id = ?");
+                    $stmt->execute([(int)$refId]);
+                    $profesor = $stmt->fetch();
+                } catch (PDOException $ex) { }
             }
+            
+            if (!$profesor) {
+                foreach ($data['profesores'] as $prof) {
+                    if ($prof['id'] == $refId) { $profesor = $prof; break; }
+                }
+            }
+            
             if ($profesor) {
                 $data['asistencias'][] = [
                     "id" => $nextId++,
